@@ -48,7 +48,7 @@
                   <tr>
                     <td>
                     <a href="<?=base_url('/account/member_edit')?>">編輯</a>
-                    |<a href="<?=base_url('/account/member_delete')?>">刪除</a>
+                    |<a href="<?=base_url('/member/destroy/' . $row->id)?>">刪除</a>
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>

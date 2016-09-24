@@ -1,10 +1,15 @@
 <?php
 class Member extends CI_Controller {
 
+	public function __construct() {
+
+		parent::__construct();
+		$this->load->model('member_model');
+	}
+
 	public function index() {
 
 		//插入member_model並load進meber_manage視圖
-		$this->load->model('member_model');
 		$member_list = $this->member_model->getall();
 		$this->load->view('/member/index', array(
 			'member_list' => $member_list));
@@ -22,6 +27,12 @@ class Member extends CI_Controller {
 			'password' => $password,
 		);
 		$this->db->update('members', $data);
+	}
+
+	public function destroy($id) {
+
+		$this->member_model->delete($id);
+		redirect('member');
 	}
 
 }
