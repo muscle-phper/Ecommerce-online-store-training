@@ -19,14 +19,13 @@ class Account extends CI_Controller {
 			$user_password = $_POST["user_password"];
 		}
 
-		$query = $this->db
-			->FROM('members')
-			->WHERE('password', $user_password)
-			->WHERE('username', $user_name)
-			->get()
-			->row();
+		$this->load->model('member_model');
+		$member = $this->member_model->chkLogin([
+			'user_name' => $user_name,
+			'user_password' => $user_password,
+		]);
 
-		if ($query) {
+		if ($member) {
 
 			$this->load->view('/member/dashboard');
 
