@@ -25,14 +25,11 @@ class Account extends CI_Controller {
 			'user_password' => $user_password,
 		]);
 
-		if ($member) {
-
-			$this->load->view('/member/dashboard');
-
-		} else {
-			echo "輸入錯誤";
+		if (!$member) {
+			redirect('account/login');
 		}
 
+		redirect('dashboard/index');
 	}
 
 }
