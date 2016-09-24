@@ -5,11 +5,11 @@
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 會員管理</a>
     </li>
     <li>
-      <a href="http://getbootstrap.com/examples/dashboard/#">
+      <a href="javascript:void(0)">
       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 商品管理</a>
     </li>
     <li>
-      <a href="http://getbootstrap.com/examples/dashboard/#">
+      <a href="javascript:void(0)">
       <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> 訂單管理</a></li>
   </ul>
 </div>
