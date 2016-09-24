@@ -12,17 +12,17 @@
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/online_auction/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url('public/css/bootstrap.min.css')?>" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/online_auction/public/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="<?=base_url('/public/css/ie10-viewport-bug-workaround.css')?>" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/online_auction/public/css/signin.css" rel="stylesheet">
+    <link href="<?=base_url('/public/css/signin.css')?>" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/online_auction/public/js/ie-emulation-modes-warning.js"></script>
+    <script src="<?=base_url('/public/js/ie-emulation-modes-warning.js')?>"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -31,10 +31,10 @@
     <![endif]-->
   </head>
 
-  <body
+  <body>
     <div class="container">
 
-      <form class="form-signin" method="POST" action="http://localhost/online_auction/account/verify">
+      <form class="form-signin" method="POST" action="<?php echo base_url('account/verify'); ?>">
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="text" id="inputEmail" name="user_name" class="form-control" placeholder="請輸入帳號" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
@@ -52,7 +52,7 @@
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/online_auction/public/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="<?=base_url('/public/js/ie10-viewport-bug-workaround.js')?>"></script>
   
 
 </body></html>
