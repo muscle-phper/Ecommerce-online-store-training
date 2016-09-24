@@ -57,47 +57,17 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li>
-              <a href="<?=base_url('/member/index')?>">
-              <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 會員管理</a>
-            </li>
-            <li>
-              <a href="http://getbootstrap.com/examples/dashboard/#">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 商品管理</a>
-            </li>
-            <li>
-              <a href="http://getbootstrap.com/examples/dashboard/#">
-              <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> 訂單管理</a></li>
-          </ul>
-        </div>
+        <?php $this->load->view('common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-        </div>
-
-
-
-          <h2 class="sub-header">Section title</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
+
               </tbody>
             </table>
           </div>
