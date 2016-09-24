@@ -60,7 +60,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li>
-              <a href="<?=base_url('/account/member_manage')?>">
+              <a href="<?=base_url('/member/member_manage')?>">
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 會員管理</a>
             </li>
             <li>
@@ -79,12 +79,14 @@
               <thead>
                 <tr>
                   <th>功能列</th>
-                  <th>sno</th>
+                  <th>id</th>
                   <th>name</th>
                   <th>address</th>
                   <th>birthday</th>
                   <th>username</th>
                   <th>password</th>
+                  <th>created_at</th>
+                  <th>updated_at</th>
                 </tr>
               </thead>
               <tbody>
@@ -94,12 +96,14 @@
                     <a href="<?=base_url('/account/member_edit')?>">編輯</a>
                     |<a href="<?=base_url('/account/member_delete')?>">刪除</a>
                     </td>
-                    <td><?=$row->sno?></td>
+                    <td><?=$row->id?></td>
                     <td><?=$row->name?></td>
                     <td><?=$row->address?></td>
                     <td><?=$row->birthday?></td>
                     <td><?=$row->username?></td>
                     <td><?=$row->password?></td>
+                    <td><?=$row->created_at?></td>
+                    <td><?=$row->updated_at?></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>

@@ -6,7 +6,7 @@
 
 			$query = $this->db->SELECT('*')
 					 ->FROM('members')
-					 ->order_by('sno','ASC')
+					 ->order_by('id','ASC')
 					 ->get();
 			return $query->result();
 

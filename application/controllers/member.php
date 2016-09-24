@@ -14,10 +14,10 @@ class member extends CI_Controller{
     public function edit(){
 
         $data = array(
-            'sno'=>$sno,
+            'id'=>$id,
             'name'=>$name,
             'address'=>$address,
-            'birthday'=>$birthdat,
+            'birthday'=>$birthday,
             'username'=>$username,
             'password'=>$password
             );
