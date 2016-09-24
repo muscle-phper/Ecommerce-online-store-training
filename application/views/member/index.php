@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -78,19 +78,17 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>功能列</th>
-                  <th>id</th>
-                  <th>name</th>
-                  <th>address</th>
-                  <th>birthday</th>
-                  <th>username</th>
-                  <th>password</th>
-                  <th>created_at</th>
-                  <th>updated_at</th>
+                  <th></th>
+                  <th>ID</th>
+                  <th>姓名</th>
+                  <th>帳號</th>
+                  <th>地址</th>
+                  <th>生日</th>
+                  <th>註冊日期</th>
                 </tr>
               </thead>
               <tbody>
-                <?php foreach($member_list as $row) :?>
+                <?php foreach ($member_list as $row): ?>
                   <tr>
                     <td>
                     <a href="<?=base_url('/account/member_edit')?>">編輯</a>
@@ -98,14 +96,12 @@
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>
+                    <td><?=$row->username?></td>
                     <td><?=$row->address?></td>
                     <td><?=$row->birthday?></td>
-                    <td><?=$row->username?></td>
-                    <td><?=$row->password?></td>
                     <td><?=$row->created_at?></td>
-                    <td><?=$row->updated_at?></td>
                   </tr>
-                <?php endforeach; ?>
+                <?php endforeach;?>
               </tbody>
             </table>
           </div>
@@ -122,6 +118,6 @@
     <script src="<?=base_url('/public/js/holder.min.js')?>"> </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?=base_url('/public/js/ie10-viewport-bug-workaround.js')?>"> </script>
-  
+
 
 </body></html>
