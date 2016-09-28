@@ -14,7 +14,7 @@
                 <th>編輯會員資料</th>
               </thead>
               <tbody>
-                <form method="POST" action="localhost/e-store/application/models/Member_model.php">
+                <form method="POST" action="<?=base_url('/member/insert')?>">
                 <tr><td>姓名</td><td><input type="text" name="name"></td></tr>
                 <tr><td>帳號</td><td><input type="text" name="username"></td></tr>
                 <tr><td>地址</td><td><input type="text" name="address"></td></tr>

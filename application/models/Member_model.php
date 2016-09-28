@@ -59,32 +59,6 @@ class Member_model extends CI_model {
 			->delete('members');
 	}
 
-	public function insert() {
-
-		$name = "";
-		$username = "";
-		$address = "";
-		$birthday = "";
-		$password = "";
-
-		if (isset($_POST['send'])) {
-			$name = $_POST['name'];
-			$username = $_POST['username'];
-			$address = $_POST['address'];
-			$birthday = $_POST['birthday'];
-			$password = $_POST['password'];
-		}
-		$data = array(
-			'name' => $name,
-			'username' => $username,
-			'address' => $address,
-			'birthday' => $birthday,
-			'password' => $password,
-		);
-
-		$bool = $this->db->insert('members', $data);
-
-	}
 }
 
 ?>
