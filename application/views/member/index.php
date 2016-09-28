@@ -3,28 +3,7 @@
 <html lang="en">
   <?php $this->load->view('common/header')?>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://getbootstrap.com/examples/dashboard/#">後台管理</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://getbootstrap.com/examples/dashboard/#">帳戶設定</a></li>
-            <li><a href="http://getbootstrap.com/examples/dashboard/#">登出</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="搜尋...">
-          </form>
-        </div>
-      </div>
-    </nav>
+  <?php $this->load->view('common/top')?>
     <div class="container-fluid">
       <div class="row">
         <?php $this->load->view('common/menu')?>
@@ -34,7 +13,7 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th></th>
+                  <th><a href="<?=base_url('/member/insert/')?>">新增</a></th>
                   <th>ID</th>
                   <th>姓名</th>
                   <th>帳號</th>
@@ -47,7 +26,7 @@
                 <?php foreach ($member_list as $row): ?>
                   <tr>
                     <td>
-                    <a href="<?=base_url('/account/member_edit')?>">編輯</a>
+                    <a href="<?=base_url('/member/edit/' . $row->id)?>">編輯</a>
                     |<a href="<?=base_url('/member/destroy/' . $row->id)?>">刪除</a>
                     </td>
                     <td><?=$row->id?></td>

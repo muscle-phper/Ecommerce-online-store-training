@@ -9,30 +9,30 @@ class Member extends CI_Controller {
 
 	public function index() {
 
-		//插入member_model並load進meber_manage視圖
 		$member_list = $this->member_model->getall();
 		$this->load->view('/member/index', array(
 			'member_list' => $member_list));
 
 	}
 
-	public function edit() {
+	public function edit($id) {
 
-		$data = array(
-			'id' => $id,
-			'name' => $name,
-			'address' => $address,
-			'birthday' => $birthday,
-			'username' => $username,
-			'password' => $password,
-		);
-		$this->db->update('members', $data);
+		$this->load->view('member/replace');
+		$this->member_model->update($id);
+
 	}
 
 	public function destroy($id) {
 
 		$this->member_model->delete($id);
 		redirect('member');
+
+	}
+
+	public function insert() {
+
+		$this->load->view('/member/add');
+
 	}
 
 }
