@@ -48,7 +48,7 @@ class Member_model extends CI_model {
 			'password' => $password,
 		);
 
-		$bool = $this->db->where('id', $id)
+		return $this->db->where('id', $id)
 			->update('members', $data);
 
 	}

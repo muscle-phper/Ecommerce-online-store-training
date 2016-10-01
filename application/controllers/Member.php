@@ -17,9 +17,8 @@ class Member extends CI_Controller {
 
 	public function edit($id) {
 
-		$this->load->view('member/replace');
+		$this->load->view('/member/replace');
 		$this->member_model->update($id);
-
 	}
 
 	public function destroy($id) {
@@ -39,23 +38,26 @@ class Member extends CI_Controller {
 		$birthday = "";
 		$password = "";
 
-		if (isset($_POST['send'])) {
+		if (isset($_POST['name'])) {
 			$name = $_POST['name'];
 			$username = $_POST['username'];
 			$address = $_POST['address'];
 			$birthday = $_POST['birthday'];
 			$password = $_POST['password'];
+
+			$data = array(
+				'name' => $name,
+				'username' => $username,
+				'address' => $address,
+				'birthday' => $birthday,
+				'password' => $password,
+			);
+
+			$bool = $this->db->insert('members', $data);
+			if ($bool) {
+				echo '新增' . $name . '資料成功';
+			}
 		}
-
-		$data = array(
-			'name' => $name,
-			'username' => $username,
-			'address' => $address,
-			'birthday' => $birthday,
-			'password' => $password,
-		);
-
-		$bool = $this->db->insert('members', $data);
 
 	}
 
