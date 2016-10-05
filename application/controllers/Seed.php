@@ -39,31 +39,25 @@ class Seed extends CI_Controller {
 		$this->db->truncate('products');
 		$this->db->insert_batch('products', [
 			[
-				'name' => 'Eric',
-				'address' => '',
-				'birthday' => '1990-01-01',
-				'username' => 'eric',
-				'password' => md5('111111'),
-				'created_at' => date('Y-m-d H:i:s'),
-				'updated_at' => date('Y-m-d H:i:s'),
+				'ID' => '1',
+				'name' => 'Note7',
+				'make' => 'Samsung',
+				'price' => '22000',
+
 			],
 			[
-				'name' => 'Tony',
+				'ID' => '2',
+				'name' => 'Iphone7',
+				'make' => 'Apple',
+				'price' => '27000',
 
-				'birthday' => '1990-01-02',
-				'username' => 'tonyciou',
-				'password' => md5('111111'),
-				'created_at' => date('Y-m-d H:i:s'),
-				'updated_at' => date('Y-m-d H:i:s'),
 			],
 			[
-				'name' => 'Andy',
+				'ID' => '3',
+				'name' => 'M7',
+				'make' => 'HTC',
+				'price' => '25000',
 
-				'birthday' => '1990-01-03',
-				'username' => 'andy',
-				'password' => md5('111111'),
-				'created_at' => date('Y-m-d H:i:s'),
-				'updated_at' => date('Y-m-d H:i:s'),
 			],
 		]);
 

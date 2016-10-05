@@ -8,6 +8,7 @@ class Member_model extends CI_model {
 			->from('members')
 			->order_by('id', 'ASC')
 			->get();
+
 		return $query->result();
 
 	}

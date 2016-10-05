@@ -5,7 +5,7 @@
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 會員管理</a>
     </li>
     <li>
-      <a href="javascript:void(0)">
+      <a href="<?=base_url('/product/index')?>">
       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 商品管理</a>
     </li>
     <li>
