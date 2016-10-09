@@ -9,7 +9,7 @@
       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 商品管理</a>
     </li>
     <li>
-      <a href="javascript:void(0)">
+      <a href="<?=base_url('/order/index')?>">
       <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> 訂單管理</a></li>
   </ul>
 </div>

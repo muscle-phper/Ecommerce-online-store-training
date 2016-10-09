@@ -63,4 +63,32 @@ class Seed extends CI_Controller {
 
 	}
 
+	public function orders() {
+		$this->db->truncate('orders');
+		$this->db->insert_batch('orders', [
+			[
+				'ID' => '1',
+				'name' => 'Note7',
+				'price' => '22000',
+				'amount' => '30',
+
+			],
+			[
+				'ID' => '2',
+				'name' => 'Iphone7',
+				'price' => '27000',
+				'amount' => '10',
+
+			],
+			[
+				'ID' => '3',
+				'name' => 'M7',
+				'price' => '25000',
+				'amount' => '20',
+
+			],
+		]);
+
+	}
+
 }
