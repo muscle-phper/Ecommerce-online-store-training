@@ -16,6 +16,7 @@ class Member_model extends CI_model {
 	public function chkLogin($data) {
 
 		$member = $this->db
+			->select('id, name')
 			->from('members')
 			->where('username', $data['user_name'])
 			->where('password', md5($data['user_password']))
@@ -25,39 +26,31 @@ class Member_model extends CI_model {
 		return $member;
 	}
 
-	public function update($id) {
+	public function update($id, $data) {
 
-		$name = "";
-		$username = "";
-		$address = "";
-		$birthday = "";
-		$password = "";
-
-		if (isset($_POST['send'])) {
-			$name = $_POST['name'];
-			$username = $_POST['username'];
-			$address = $_POST['address'];
-			$birthday = $_POST['birthday'];
-			$password = $_POST['password'];
-		}
-
-		$data = array(
-			'name' => $name,
-			'username' => $username,
-			'address' => $address,
-			'birthday' => $birthday,
-			'password' => $password,
-		);
-
+		$data['updated_at'] = date('Y-m-d H:i:s');
 		return $this->db->where('id', $id)
 			->update('members', $data);
+	}
 
+	public function getMember($id) {
+		return $this->db->from('members')
+			->where('id', $id)
+			->get()
+			->row();
 	}
 
 	public function delete($id) {
 
 		return $this->db->where('id', $id)
 			->delete('members');
+	}
+
+	public function add($data) {
+		$now = date('Y-m-d H:i:s');
+		$data['created_at'] = $now;
+		$data['updated_at'] = $now;
+		return $this->db->insert('members', $data);
 	}
 
 }

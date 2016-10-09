@@ -1,10 +1,9 @@
 <?php
-class Account extends CI_Controller {
+class Account extends MY_Controller {
 
 	public function login() {
 
 		$this->load->view('/account/login');
-
 	}
 
 	public function verify() {
@@ -29,7 +28,17 @@ class Account extends CI_Controller {
 			redirect('account/login');
 		}
 
+		$this->session->set_userdata([
+			'id' => $member->id,
+			'name' => $member->name,
+			'logged' => TRUE,
+		]);
+
 		redirect('dashboard/index');
 	}
 
+	public function logout() {
+		$this->session->sess_destroy();
+		redirect('/account/login');
+	}
 }

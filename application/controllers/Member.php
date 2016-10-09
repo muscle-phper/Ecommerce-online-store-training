@@ -1,5 +1,5 @@
 <?php
-class Member extends CI_Controller {
+class Member extends MY_Controller {
 
 	public function __construct() {
 
@@ -18,8 +18,17 @@ class Member extends CI_Controller {
 
 	public function edit($id) {
 
-		$this->load->view('/member/replace');
-		$this->member_model->update($id);
+		$member = $this->member_model->getMember($id);
+		$this->load->view('/member/form', [
+			'member' => $member,
+		]);
+	}
+
+	public function update($id) {
+
+		$data = $this->input->post(null, true);
+		$this->member_model->update($id, $data);
+		redirect('/member');
 	}
 
 	public function destroy($id) {
@@ -29,37 +38,15 @@ class Member extends CI_Controller {
 
 	}
 
-	public function insert() {
+	public function create() {
 
-		$this->load->view('/member/add');
-
-		$name = "";
-		$username = "";
-		$address = "";
-		$birthday = "";
-		$password = "";
-
-		if (isset($_POST['name'])) {
-			$name = $_POST['name'];
-			$username = $_POST['username'];
-			$address = $_POST['address'];
-			$birthday = $_POST['birthday'];
-			$password = $_POST['password'];
-
-			$data = array(
-				'name' => $name,
-				'username' => $username,
-				'address' => $address,
-				'birthday' => $birthday,
-				'password' => $password,
-			);
-
-			$bool = $this->db->insert('members', $data);
-			if ($bool) {
-				echo '新增' . $name . '資料成功';
-			}
-		}
-
+		$this->load->view('/member/form');
 	}
 
+	public function store() {
+
+		$data = $this->input->post(null, true);
+		$this->member_model->add($data);
+		redirect('/member');
+	}
 }
