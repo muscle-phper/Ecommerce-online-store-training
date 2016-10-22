@@ -13,38 +13,12 @@ class Product_model extends CI_model {
 
 	}
 
-	public function chkLogin($data) {
+	public function getProduct($id) {
 
-		$member = $this->db
-			->from('members')
-			->where('username', $data['user_name'])
-			->where('password', md5($data['user_password']))
+		return $this->db->from('products')
+			->where('id', $id)
 			->get()
-			->row(); //傳單筆資料
-
-		return $member;
-	}
-
-	public function update($id) {
-
-		$name = "";
-		$make = "";
-		$price = "";
-
-		if (isset($_POST['name'])) {
-			$name = $_POST['name'];
-			$make = $_POST['make'];
-			$price = $_POST['price'];
-		}
-
-		$data = array(
-			'name' => $name,
-			'make' => $make,
-			'price' => $price,
-		);
-
-		return $this->db->where('id', $id)
-			->update('products', $data);
+			->row();
 
 	}
 

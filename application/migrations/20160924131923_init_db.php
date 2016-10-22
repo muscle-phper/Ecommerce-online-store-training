@@ -15,6 +15,7 @@ class Migration_Init_db extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '12',
 			),
+
 			'username' => array(
 				'type' => 'VARCHAR',
 				'constraint' => '50',

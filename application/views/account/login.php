@@ -36,9 +36,9 @@
 
       <form class="form-signin" method="POST" action="<?php echo base_url('account/verify'); ?>">
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" name="user_name" class="form-control" placeholder="請輸入帳號" required="" autofocus="">
+        <input type="text" id="inputEmail" name="name" class="form-control" placeholder="請輸入帳號" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="user_password" class="form-control" placeholder="請輸入密碼" required="">
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="請輸入密碼" required="">
         <div class="checkbox-inline">
           <label style="font-weight:normal">
             <input type="checkbox" value="remember-me">記得此帳號

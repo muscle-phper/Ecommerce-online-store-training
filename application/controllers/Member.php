@@ -11,8 +11,9 @@ class Member extends MY_Controller {
 	public function index() {
 
 		$member_list = $this->member_model->getall();
-		$this->load->view('/member/index', array(
-			'member_list' => $member_list));
+		$this->load->view('/member/index', [
+			'member_list' => $member_list,
+		]);
 
 	}
 
@@ -45,7 +46,7 @@ class Member extends MY_Controller {
 
 	public function store() {
 
-		$data = $this->input->post(null, true);
+		$data = $this->input->post(null, true); // returns all POST items with XSS filter
 		$this->member_model->add($data);
 		redirect('/member');
 	}

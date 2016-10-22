@@ -18,8 +18,8 @@ class Member_model extends CI_model {
 		$member = $this->db
 			->select('id, name')
 			->from('members')
-			->where('username', $data['user_name'])
-			->where('password', md5($data['user_password']))
+			->where('username', $data['name'])
+			->where('password', md5($data['password']))
 			->get()
 			->row(); //傳單筆資料
 
@@ -50,6 +50,7 @@ class Member_model extends CI_model {
 		$now = date('Y-m-d H:i:s');
 		$data['created_at'] = $now;
 		$data['updated_at'] = $now;
+		$data['password'] = md5($data['password']);
 		return $this->db->insert('members', $data);
 	}
 

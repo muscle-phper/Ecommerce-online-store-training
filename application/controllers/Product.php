@@ -18,8 +18,12 @@ class Product extends CI_Controller {
 
 	public function edit($id) {
 
-		$this->load->view('/product/replace');
-		$this->product_model->update($id);
+		$product = $this->product_model->getProduct($id);
+		print_r($product);exit;
+		$this->load->view('/products/form', [
+			'product' => $product,
+		]);
+
 	}
 
 	public function destroy($id) {

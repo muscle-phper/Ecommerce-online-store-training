@@ -8,20 +8,13 @@ class Account extends MY_Controller {
 
 	public function verify() {
 
-		$user_name = "";
-		$user_password = "";
-		if (isset($_POST["user_name"])) {
-			$user_name = $_POST["user_name"];
-		}
-
-		if (isset($_POST["user_password"])) {
-			$user_password = $_POST["user_password"];
-		}
+		$name = $this->input->post('name');
+		$password = $this->input->post('password');
 
 		$this->load->model('member_model');
 		$member = $this->member_model->chkLogin([
-			'user_name' => $user_name,
-			'user_password' => $user_password,
+			'name' => $name,
+			'password' => $password,
 		]);
 
 		if (!$member) {

@@ -15,26 +15,14 @@ class Migration_Create_products_table extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '12',
 			),
-			'username' => array(
-				'type' => 'VARCHAR',
-				'constraint' => '50',
+
+			'price' => array(
+				'type' => 'INT',
+				'unsigned' => TRUE,
 			),
-			'password' => array(
+			'make' => array(
 				'type' => 'VARCHAR',
 				'constraint' => '100',
-			),
-			'addressaaa' => array(
-				'type' => 'VARCHAR',
-				'constraint' => '50',
-			),
-			'birthday' => array(
-				'type' => 'DATE',
-			),
-			'created_at' => array(
-				'type' => 'DATETIME',
-			),
-			'updated_at' => array(
-				'type' => 'DATETIME',
 			),
 		));
 		$this->dbforge->add_key('id', TRUE);

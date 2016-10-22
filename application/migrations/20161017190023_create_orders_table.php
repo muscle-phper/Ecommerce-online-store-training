@@ -15,6 +15,7 @@ class Migration_Create_orders_table extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => '12',
 			),
+
 			'price' => array(
 				'type' => 'INT',
 				'unsigned' => TRUE,
@@ -23,11 +24,6 @@ class Migration_Create_orders_table extends CI_Migration {
 				'type' => 'INT',
 				'unsigned' => TRUE,
 			),
-			'status' => array(
-				'type' => 'VARCHAR',
-				'constraint' => '50',
-			),
-
 		));
 		$this->dbforge->add_key('id', TRUE);
 		$this->dbforge->create_table('orders');
