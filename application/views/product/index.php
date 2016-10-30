@@ -9,11 +9,13 @@
         <?php $this->load->view('common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">商品管理</h2>
+          <a href="<?=base_url('/product/create/')?>" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true">新增商品</a>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th><a href="<?=base_url('/product/insert/')?>">新增</a></th>
+                  <th></th>
                   <th>ID</th>
                   <th>產品名稱</th>
                   <th>製造商</th>
@@ -24,8 +26,9 @@
                 <?php foreach ($product_list as $row): ?>
                   <tr>
                     <td>
-                    <a href="<?=base_url('/product/edit/' . $row->id)?>">編輯</a>
-                    |<a href="<?=base_url('/product/destroy/' . $row->id)?>">刪除</a>
+                    <a href="<?=base_url('/product/edit/' . $row->id)?>" class="btn btn-primary btn-xs" type="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">編輯
+                    </a>
+                    <a href="<?=base_url('/product/destroy/' . $row->id)?>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true">刪除</a>
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>

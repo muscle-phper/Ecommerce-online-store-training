@@ -19,8 +19,7 @@ class Product extends CI_Controller {
 	public function edit($id) {
 
 		$product = $this->product_model->getProduct($id);
-		print_r($product);exit;
-		$this->load->view('/products/form', [
+		$this->load->view('/product/form', [
 			'product' => $product,
 		]);
 
@@ -33,30 +32,16 @@ class Product extends CI_Controller {
 
 	}
 
-	public function insert() {
+	public function create() {
 
-		$this->load->view('/product/add');
+		$this->load->view('/product/form');
+	}
 
-		$name = "";
-		$make = "";
-		$price = "";
+	public function update($id) {
 
-		if (isset($_POST['name'])) {
-			$name = $_POST['name'];
-			$make = $_POST['make'];
-			$price = $_POST['price'];
-
-			$data = array(
-				'name' => $name,
-				'make' => $make,
-				'price' => $price,
-			);
-
-			$bool = $this->db->insert('products', $data);
-			if ($bool) {
-				echo '新增' . $name . '資料成功';
-			}
-		}
+		$data = $this->input->post(null, true);
+		$this->product_model->update($id, $data);
+		redirect('/product');
 
 	}
 

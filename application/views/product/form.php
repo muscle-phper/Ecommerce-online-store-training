@@ -8,38 +8,24 @@
       <div class="row">
         <?php $this->load->view('common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h2 class="sub-header">新增會員</h2>
-          <form class="form-horizontal" method="post" action="<?=isset($member) ? base_url('member/update/' . $member->id) : base_url('member/store')?>">
+          <h2 class="sub-header"><?=isset($product) ? '修改' : '新增'?>會員</h2>
+          <form class="form-horizontal" method="post" action="<?=isset($product) ? base_url('product/update/' . $product->id) : base_url('product/store')?>">
             <div class="form-group">
-              <label for="" class="col-sm-2 control-label">帳號</label>
+              <label for="" class="col-sm-2 control-label">產品名稱</label>
               <div class="col-sm-4">
-                <input type="text" name="username" class="form-control" value="<?=isset($member) ? $member->username : ''?>" placeholder="請輸入帳號">
-              </div>
-            </div>
-            <?php if (isset($member) == false): ?>
-            <div class="form-group">
-              <label for="" class="col-sm-2 control-label">密碼</label>
-              <div class="col-sm-4">
-                <input type="text" name="password" class="form-control" value="" placeholder="請輸入密碼">
-              </div>
-            </div>
-            <?php endif?>
-            <div class="form-group">
-              <label for="" class="col-sm-2 control-label">姓名</label>
-              <div class="col-sm-4">
-                <input type="text" name="name" class="form-control" value="<?=isset($member) ? $member->name : ''?>" placeholder="請輸入姓名">
+                <input type="text" name="name" class="form-control" value="<?=isset($product) ? $product->name : ''?>" placeholder="請輸入名稱">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">地址</label>
+              <label for="" class="col-sm-2 control-label">產品價格</label>
               <div class="col-sm-4">
-                <input type="text" name="address" class="form-control" value="<?=isset($member) ? $member->address : ''?>" placeholder="請輸入地址">
+                <input type="text" name="price" class="form-control" value="<?=isset($product) ? $product->price : ''?>" placeholder="請輸入價格">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">生日</label>
+              <label for="" class="col-sm-2 control-label">製造廠商</label>
               <div class="col-sm-4">
-                <input type="text" name="birthday" class="form-control" value="<?=isset($member) ? $member->birthday : ''?>" placeholder="請輸入生日">
+                <input type="text" name="make" class="form-control" value="<?=isset($product) ? $product->make : ''?>" placeholder="請輸入廠商">
               </div>
             </div>
             <div class="form-group">

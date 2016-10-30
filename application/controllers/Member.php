@@ -30,8 +30,8 @@ class Member extends MY_Controller {
 		$data = $this->input->post(null, true);
 		$this->member_model->update($id, $data);
 		redirect('/member');
-	}
 
+	}
 	public function destroy($id) {
 
 		$this->member_model->delete($id);
