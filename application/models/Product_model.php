@@ -34,6 +34,11 @@ class Product_model extends CI_model {
 			->update('products', $data);
 
 	}
+
+	public function add($data) {
+
+		return $this->db->insert('products', $data);
+	}
 }
 
 ?>

@@ -32,6 +32,14 @@ class Product extends CI_Controller {
 
 	}
 
+	public function store() {
+
+		$data = $this->input->post(null, true);
+		$this->product_model->add($data);
+		redirect('/product');
+
+	}
+
 	public function create() {
 
 		$this->load->view('/product/form');
