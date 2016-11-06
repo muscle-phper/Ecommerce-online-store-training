@@ -39,6 +39,14 @@ class Product_model extends CI_model {
 
 		return $this->db->insert('products', $data);
 	}
+
+	public function getHomeProducts() {
+		$query = $this->db->from('products')
+			->order_by('price', 'desc')
+			->get();
+
+		return $query->result();
+	}
 }
 
 ?>
