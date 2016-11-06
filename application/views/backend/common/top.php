@@ -11,7 +11,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?=base_url('/frontend/home')?>">前往前台</a></li>
+            <li><a href="<?=base_url()?>">前往前台</a></li>
             <li><a href="javascript:void(0)">帳戶設定</a></li>
             <li><a href="<?=base_url('/backend/account/logout')?>">登出</a></li>
           </ul>
