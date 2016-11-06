@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
 <html lang="en">
-  <?php $this->load->view('common/header')?>
+  <?php $this->load->view('/backend/common/header')?>
   <body>
-  <?php $this->load->view('common/top')?>
+  <?php $this->load->view('/backend/common/top')?>
     <div class="container-fluid">
       <div class="row">
-        <?php $this->load->view('common/menu')?>
+        <?php $this->load->view('/backend/common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">訂單管理</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th><a href="<?=base_url('/order/insert/')?>">新增</a></th>
+                  <th><a href="<?=base_url('/backend/order/insert/')?>">新增</a></th>
                   <th>訂單編號</th>
                   <th>客戶編號</th>
                   <th>產品名稱</th>
@@ -26,8 +26,8 @@
                 <?php foreach ($order_list as $row): ?>
                   <tr>
                     <td>
-                    <a href="<?=base_url('/order/edit/' . $row->id)?>">編輯</a>
-                    |<a href="<?=base_url('/order/destroy/' . $row->id)?>">刪除</a>
+                    <a href="<?=base_url('/backend/order/edit/' . $row->id)?>">編輯</a>
+                    |<a href="<?=base_url('/backend/order/destroy/' . $row->id)?>">刪除</a>
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>
