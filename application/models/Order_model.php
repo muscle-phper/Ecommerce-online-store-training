@@ -8,7 +8,7 @@ class Order_model extends CI_model {
 			->order_by('id', 'ASC')
 			->get();
 
-		return $query->reusult();
+		return $query->result();
 	}
 
 }

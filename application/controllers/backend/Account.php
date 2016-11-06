@@ -3,7 +3,7 @@ class Account extends MY_Controller {
 
 	public function login() {
 
-		$this->load->view('/account/login');
+		$this->load->view('/backend/account/login');
 	}
 
 	public function verify() {
@@ -18,7 +18,7 @@ class Account extends MY_Controller {
 		]);
 
 		if (!$member) {
-			redirect('account/login');
+			redirect('/backend/account/login');
 		}
 
 		$this->session->set_userdata([
@@ -27,11 +27,11 @@ class Account extends MY_Controller {
 			'logged' => TRUE,
 		]);
 
-		redirect('dashboard/index');
+		redirect('/backend/dashboard/index');
 	}
 
 	public function logout() {
 		$this->session->sess_destroy();
-		redirect('/account/login');
+		redirect('/backend/account/login');
 	}
 }

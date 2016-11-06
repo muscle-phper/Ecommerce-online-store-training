@@ -11,7 +11,7 @@ class Member extends MY_Controller {
 	public function index() {
 
 		$member_list = $this->member_model->getall();
-		$this->load->view('/member/index', [
+		$this->load->view('/backend/member/index', [
 			'member_list' => $member_list,
 		]);
 
@@ -20,7 +20,7 @@ class Member extends MY_Controller {
 	public function edit($id) {
 
 		$member = $this->member_model->getMember($id);
-		$this->load->view('/member/form', [
+		$this->load->view('/backend/member/form', [
 			'member' => $member,
 		]);
 	}
@@ -29,25 +29,25 @@ class Member extends MY_Controller {
 
 		$data = $this->input->post(null, true);
 		$this->member_model->update($id, $data);
-		redirect('/member');
+		redirect('/backend/member');
 
 	}
 	public function destroy($id) {
 
 		$this->member_model->delete($id);
-		redirect('member');
+		redirect('/backend/member');
 
 	}
 
 	public function create() {
 
-		$this->load->view('/member/form');
+		$this->load->view('/backend/member/form');
 	}
 
 	public function store() {
 
 		$data = $this->input->post(null, true); // returns all POST items with XSS filter
 		$this->member_model->add($data);
-		redirect('/member');
+		redirect('/backend/member');
 	}
 }

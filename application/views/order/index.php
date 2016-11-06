@@ -14,10 +14,12 @@
               <thead>
                 <tr>
                   <th><a href="<?=base_url('/order/insert/')?>">新增</a></th>
-                  <th>ID</th>
+                  <th>訂單編號</th>
+                  <th>客戶編號</th>
                   <th>產品名稱</th>
-                  <th>製造商</th>
-                  <th>價格</th>
+                  <th>數量</th>
+                  <th>單價</th>
+                  <th>出貨時間</th>
                 </tr>
               </thead>
               <tbody>

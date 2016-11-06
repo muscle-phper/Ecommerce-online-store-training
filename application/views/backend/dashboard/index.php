@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
 <html lang="en">
-  <?php $this->load->view('common/header')?>
+  <?php $this->load->view('/backend/common/header')?>
   <body>
-  <?php $this->load->view('common/top')?>
+  <?php $this->load->view('/backend/common/top')?>
     <div class="container-fluid">
       <div class="row">
-        <?php $this->load->view('common/menu')?>
+        <?php $this->load->view('/backend/common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="table-responsive">
             <table class="table table-striped">

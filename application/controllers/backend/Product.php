@@ -11,7 +11,7 @@ class Product extends CI_Controller {
 	public function index() {
 
 		$product_list = $this->product_model->getall();
-		$this->load->view('/product/index', array(
+		$this->load->view('/backend/product/index', array(
 			'product_list' => $product_list));
 
 	}
@@ -19,7 +19,7 @@ class Product extends CI_Controller {
 	public function edit($id) {
 
 		$product = $this->product_model->getProduct($id);
-		$this->load->view('/product/form', [
+		$this->load->view('/backend/product/form', [
 			'product' => $product,
 		]);
 
@@ -28,7 +28,7 @@ class Product extends CI_Controller {
 	public function destroy($id) {
 
 		$this->product_model->delete($id);
-		redirect('product');
+		redirect('/backend/product');
 
 	}
 
@@ -36,20 +36,20 @@ class Product extends CI_Controller {
 
 		$data = $this->input->post(null, true);
 		$this->product_model->add($data);
-		redirect('/product');
+		redirect('/backend/product');
 
 	}
 
 	public function create() {
 
-		$this->load->view('/product/form');
+		$this->load->view('/backend/product/form');
 	}
 
 	public function update($id) {
 
 		$data = $this->input->post(null, true);
 		$this->product_model->update($id, $data);
-		redirect('/product');
+		redirect('/backend/product');
 
 	}
 

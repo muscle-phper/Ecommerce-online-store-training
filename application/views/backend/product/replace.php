@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
 <html lang="en">
-  <?php $this->load->view('common/header')?>
+  <?php $this->load->view('/backend/common/header')?>
   <body>
-  <?php $this->load->view('common/top')?>
+  <?php $this->load->view('/backend/common/top')?>
     <div class="container-fluid">
       <div class="row">
 
