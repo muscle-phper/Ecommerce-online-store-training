@@ -68,25 +68,53 @@ class Seed extends CI_Controller {
 		$this->db->insert_batch('orders', [
 			[
 				'ID' => '1',
-				'name' => 'Note7',
-				'price' => '22000',
-				'amount' => '30',
+				'member_id' => '1',
+				'total_price' => '22000',
+				'created_at' => date('Y-m-d H:i:s'),
 
 			],
 			[
 				'ID' => '2',
-				'name' => 'Iphone7',
-				'price' => '27000',
-				'amount' => '10',
+				'member_id' => '2',
+				'total_price' => '21000',
+				'created_at' => date('Y-m-d H:i:s'),
 
 			],
 			[
 				'ID' => '3',
-				'name' => 'M7',
-				'price' => '25000',
-				'amount' => '20',
+				'member_id' => '3',
+				'total_price' => '122000',
+				'created_at' => date('Y-m-d H:i:s'),
 
 			],
+		]);
+
+	}
+
+	public function order_products() {
+
+		$this->db->truncate('order_products');
+		$this->db->insert_batch('order_products', [
+
+			[
+				'ID' => '1',
+				'order_id' => '1',
+				'product_id' => '1',
+				'product_name' => 'M7',
+				'price' => '25000',
+				'amount' => '5',
+
+			],
+			[
+				'ID' => '2',
+				'order_id' => '2',
+				'product_id' => '2',
+				'product_name' => 'Iphone7',
+				'price' => '27000',
+				'amount' => '5',
+
+			],
+
 		]);
 
 	}

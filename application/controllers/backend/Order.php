@@ -19,6 +19,9 @@ class Order extends CI_Controller {
 	public function edit($id) {
 
 		$order = $this->order_model->getOrder($id);
+		$this->load->view('/backend/order/form', [
+			'order' => $order,
+		]);
 	}
 
 }

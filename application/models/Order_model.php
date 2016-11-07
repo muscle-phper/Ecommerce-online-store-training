@@ -11,6 +11,15 @@ class Order_model extends CI_model {
 		return $query->result();
 	}
 
+	public function getOrder($id) {
+
+		return $this->db->from('orders')
+			->where('id', $id)
+			->get()
+			->row();
+
+	}
+
 }
 
 ?>
