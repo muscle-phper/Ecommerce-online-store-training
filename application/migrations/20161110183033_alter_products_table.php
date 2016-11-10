@@ -12,9 +12,8 @@ class Migration_Alter_products_table extends CI_Migration {
 				'constraint' => '100',
 			),
 			'picture' => array(
-				'type' => 'INT',
-				'unsigned' => TRUE,
-				'null' => FALSE,
+				'type' => 'VARCHAR',
+				'constraint' => '100',
 			),
 		);
 
