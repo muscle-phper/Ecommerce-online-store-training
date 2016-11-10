@@ -32,7 +32,7 @@
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>
-                    <td><?=$row->make?></td>
+                    <td><?=$row->brand?></td>
                     <td><?=$row->price?></td>
                   </tr>
                 <?php endforeach;?>

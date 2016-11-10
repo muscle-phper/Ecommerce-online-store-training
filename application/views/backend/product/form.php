@@ -25,7 +25,7 @@
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">製造廠商</label>
               <div class="col-sm-4">
-                <input type="text" name="make" class="form-control" value="<?=isset($product) ? $product->make : ''?>" placeholder="請輸入廠商">
+                <input type="text" name="brand" class="form-control" value="<?=isset($product) ? $product->brand : ''?>" placeholder="請輸入廠商">
               </div>
             </div>
             <div class="form-group">
