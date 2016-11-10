@@ -43,6 +43,7 @@ class Migration_Create_order_products_table extends CI_Migration {
 	}
 
 	public function down() {
+
 		$this->dbforge->drop_table('order_products');
 	}
 }

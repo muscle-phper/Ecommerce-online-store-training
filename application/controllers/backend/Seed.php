@@ -41,22 +41,25 @@ class Seed extends CI_Controller {
 			[
 				'ID' => '1',
 				'name' => 'Note7',
-				'make' => 'Samsung',
+				'brand' => 'Samsung',
 				'price' => '22000',
+				'description' => '韓國狗狗Note7',
 
 			],
 			[
 				'ID' => '2',
 				'name' => 'Iphone7',
-				'make' => 'Apple',
+				'brand' => 'Apple',
 				'price' => '27000',
+				'description' => '軟體順暢I7',
 
 			],
 			[
 				'ID' => '3',
 				'name' => 'M7',
-				'make' => 'HTC',
+				'brand' => 'HTC',
 				'price' => '25000',
+				'description' => '酷炫外型M7',
 
 			],
 		]);
