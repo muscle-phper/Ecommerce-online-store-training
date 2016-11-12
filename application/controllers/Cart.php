@@ -2,7 +2,8 @@
 
 class Cart extends CI_Controller {
 
-	public function add() {
-
+	public function add($productId) {
+		$this->cart->add($productId);
+		redirect();
 	}
 }

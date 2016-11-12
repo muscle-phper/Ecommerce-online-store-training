@@ -30,6 +30,10 @@
                   </ul>
                 </li>
               </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge"><?=count($this->cart->getAll())?></span></a></li>
+              </ul>
             </div>
           </div>
         </nav>
