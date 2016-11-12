@@ -31,16 +31,20 @@ class MY_Cart {
 
 	public function delete($id) {
 		$products = $this->getAll();
-		$cnt = count($products);
 
-		for ($i = 0; $i < $cnt; $i++) {
-			if ($products[$i]->id == $id) {
-				unset($products[$i]);
-				break;
+		$new = [];
+
+		if (is_array($products)) {
+
+			foreach ($products as $index => $p) {
+
+				if ($p->id != $id) {
+					$new[] = $p;
+				}
 			}
 		}
 
-		set_cookie('products', json_encode($products), static::EXPIRED_TIME);
+		set_cookie('products', json_encode($new), static::EXPIRED_TIME);
 		return true;
 	}
 
