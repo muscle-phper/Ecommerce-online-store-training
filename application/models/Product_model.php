@@ -55,6 +55,7 @@ class Product_model extends CI_model {
 			->where_in('id', $productsID)
 			->order_by('id', 'ASC')
 			->get();
+		return $query->result();
 	}
 }
 

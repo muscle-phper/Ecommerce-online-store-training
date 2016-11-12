@@ -28,7 +28,6 @@
         <div class="col-md-offset-2 col-md-8">
           <table class="table table-hover">
             <thead>
-            <?php foreach ($cartProducts as $cp): ?>
               <tr>
                 <th>#</th>
                 <th>商品名稱</th>
@@ -37,24 +36,14 @@
               </tr>
             </thead>
             <tbody>
+              <?php foreach ($cartProducts as $index => $cp): ?>
               <tr>
-                <th scope="row">1</th>
+                <th scope="row"><?=$index + 1?></th>
                 <td><?=$cp->name?></td>
                 <td><?=$cp->price?></td>
-                <td><?=$cp->amount?></td>
+                <td>1</td>
               </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
+            <?php endforeach?>
             </tbody>
           </table>
         </div>
