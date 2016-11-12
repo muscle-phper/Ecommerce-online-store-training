@@ -42,6 +42,7 @@
                 <td><?=$cp->name?></td>
                 <td><?=$cp->price?></td>
                 <td>1</td>
+                <td><a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/cart/destroy/" . $cp->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a></td>
               </tr>
             <?php endforeach?>
             </tbody>
@@ -71,5 +72,14 @@
     <script src="<?=base_url('/public/js/holder.min.js')?>"> </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?=base_url('/public/js/ie10-viewport-bug-workaround.js')?>"> </script>
+
+    <script>
+    function destroyRow(link){
+      if(confirm('確定是否刪除')){
+        location.replace(link);
+      }
+    }
+    </script>
+
   </body>
 </html>

@@ -26,4 +26,12 @@ class Cart extends CI_Controller {
 		}
 		return $ids;
 	}
+
+	public function destroy($id) {
+
+		$this->cart->delete($id);
+		redirect('/cart');
+
+	}
+
 }
