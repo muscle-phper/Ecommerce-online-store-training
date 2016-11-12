@@ -8,7 +8,6 @@ class MY_Cart {
 
 	public function __construct() {
 		$this->CI = &get_instance();
-		$this->CI->load->helper('cookie');
 	}
 
 	protected function isDuplicate($itemId) {
