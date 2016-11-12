@@ -34,7 +34,7 @@ class MY_Cart {
 		$cnt = count($products);
 
 		for ($i = 0; $i < $cnt; $i++) {
-			if ($p->id == $id) {
+			if ($products[$i]->id == $id) {
 				unset($products[$i]);
 				break;
 			}
