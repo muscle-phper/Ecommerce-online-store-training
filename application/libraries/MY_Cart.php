@@ -29,10 +29,24 @@ class MY_Cart {
 		set_cookie('products', json_encode($products), static::EXPIRED_TIME);
 	}
 
+	public function delete($id) {
+		$products = $this->getAll();
+		$cnt = count($products);
+
+		for ($i = 0; $i < $cnt; $i++) {
+			if ($p->id == $id) {
+				unset($products[$i]);
+				break;
+			}
+		}
+
+		set_cookie('products', json_encode($products), static::EXPIRED_TIME);
+		return true;
+	}
+
 	public function getAll() {
 		$cookies = get_cookie('products');
 		$cookies = $cookies ? $cookies : '[]';
 		return json_decode($cookies);
 	}
-
 }
