@@ -10,10 +10,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Project name</a>
+              <a class="navbar-brand" href="/">首頁</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+               <!-- <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -29,10 +29,10 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-              </ul>
+               </ul> -->
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="/"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge"><?=count($this->cart->getAll())?></span></a></li>
+                <li><a href="/"><span class="glyphicon glyphicon-user"></span> 我的帳戶</a></li>
+                <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車 <span class="badge"><?=count($this->cart->getAll())?></span></a></li>
               </ul>
             </div>
           </div>

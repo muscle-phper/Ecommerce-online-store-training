@@ -28,6 +28,7 @@
         <div class="col-md-offset-2 col-md-8">
           <table class="table table-hover">
             <thead>
+            <?php foreach ($cartProducts as $cp): ?>
               <tr>
                 <th>#</th>
                 <th>商品名稱</th>
@@ -38,9 +39,9 @@
             <tbody>
               <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td><?=$cp->name?></td>
+                <td><?=$cp->price?></td>
+                <td><?=$cp->amount?></td>
               </tr>
               <tr>
                 <th scope="row">1</th>
@@ -67,10 +68,7 @@
 
       <hr class="featurette-divider">
 
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
+      <?php $this->load->view('/frontend/common/footer')?>
 
     </div><!-- /.container -->
 
