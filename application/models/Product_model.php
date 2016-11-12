@@ -41,11 +41,20 @@ class Product_model extends CI_model {
 	}
 
 	public function getHomeProducts() {
+
 		$query = $this->db->from('products')
 			->order_by('price', 'desc')
 			->get();
 
 		return $query->result();
+	}
+
+	public function getCartProducts($productsID) {
+
+		$query = $this->db->from('products')
+			->where_in('id', $productsID)
+			->order_by('id', 'ASC')
+			->get();
 	}
 }
 

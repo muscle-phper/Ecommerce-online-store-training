@@ -34,4 +34,5 @@ class MY_Cart {
 		$cookies = $cookies ? $cookies : '[]';
 		return json_decode($cookies);
 	}
+
 }
