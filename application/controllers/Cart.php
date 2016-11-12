@@ -12,8 +12,11 @@ class Cart extends CI_Controller {
 
 		$this->load->model('product_model');
 		$products = $this->cart->getAll();
+		//var_dump($products);exit;
 		$productIds = $this->getProductIds($products);
-		$cartProducts = $this->product_model->getCartProducts($productIds);
+		if ($products != null) {
+			$cartProducts = $this->product_model->getCartProducts($productIds);
+		} else { $cartProducts = [];}
 		$this->load->view('/frontend/cart/index', [
 			'cartProducts' => $cartProducts,
 		]);
