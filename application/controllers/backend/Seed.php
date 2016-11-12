@@ -53,7 +53,7 @@ class Seed extends CI_Controller {
 				'brand' => 'Samsung',
 				'price' => '22000',
 				'description' => '韓國狗狗Note7',
-				'picture' => '/public/upload/Note7.jpg',
+				'picture' => '/public/upload/products/Note7.jpg',
 
 			],
 			[
@@ -62,7 +62,7 @@ class Seed extends CI_Controller {
 				'brand' => 'Apple',
 				'price' => '27000',
 				'description' => '軟體順暢I7',
-				'picture' => '/public/upload/Iphone7.jpg',
+				'picture' => '/public/upload/products/Iphone7.jpg',
 
 			],
 			[
@@ -71,7 +71,7 @@ class Seed extends CI_Controller {
 				'brand' => 'HTC',
 				'price' => '25000',
 				'description' => '酷炫外型M7',
-				'picture' => '/public/upload/M7.jpg',
+				'picture' => '/public/upload/products/M7.jpg',
 
 			],
 		]);
