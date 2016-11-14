@@ -28,7 +28,7 @@ class Product extends CI_Controller {
 	public function destroy($id) {
 
 		$this->product_model->delete($id);
-		redirect('/backend/product');
+		redirect('/backend/product/');
 
 	}
 
@@ -36,6 +36,20 @@ class Product extends CI_Controller {
 
 		$data = $this->input->post(null, true);
 		$this->product_model->add($data);
+
+		//上傳目錄需手動新增
+		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/products';
+		$config['allowed_types'] = 'jpg|png|PPT';
+		//修改檔案名稱
+		//uniqid();   Generate a unique ID
+		$config['file_name'] = uniqid();
+		//裝載文件上傳類別
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('picture');
+		var_dump($this->upload->data());
+
+		$data = $this->upload->data();
+		echo $data['file_name'];
 		redirect('/backend/product');
 
 	}
@@ -50,6 +64,24 @@ class Product extends CI_Controller {
 		$data = $this->input->post(null, true);
 		$this->product_model->update($id, $data);
 		redirect('/backend/product');
+
+	}
+
+	public function upload() {
+
+		//上傳目錄需手動新增
+		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/products';
+		$config['allowed_types'] = 'jpg|png|PPT';
+		//修改檔案名稱
+		//uniqid();   Generate a unique ID
+		$config['file_name'] = uniqid();
+		//裝載文件上傳類別
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('picture');
+		var_dump($this->upload->data());
+
+		$data = $this->upload->data();
+		echo $data['file_name'];
 
 	}
 

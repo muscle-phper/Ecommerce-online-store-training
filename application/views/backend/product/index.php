@@ -28,7 +28,7 @@
                     <td>
                     <a href="<?=base_url('/backend/product/edit/' . $row->id)?>" class="btn btn-primary btn-xs" type="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">編輯
                     </a>
-                    <a href="<?=base_url('/backend/product/destroy/' . $row->id)?>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true">刪除</a>
+                   <a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/backend/product/destroy/" . $row->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a>
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>
@@ -52,6 +52,14 @@
     <script src="<?=base_url('/public/js/holder.min.js')?>"> </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?=base_url('/public/js/ie10-viewport-bug-workaround.js')?>"> </script>
+
+    <script>
+    function destroyRow(link){
+      if(confirm('確定是否刪除')){
+        location.replace(link);
+      }
+    }
+    </script>
 
 
 </body></html>

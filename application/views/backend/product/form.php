@@ -8,8 +8,8 @@
       <div class="row">
         <?php $this->load->view('/backend/common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h2 class="sub-header"><?=isset($product) ? '修改' : '新增'?>會員</h2>
-          <form class="form-horizontal" method="post" action="<?=isset($product) ? base_url('/backend/product/update/' . $product->id) : base_url('/backend/product/store')?>">
+          <h2 class="sub-header"><?=isset($product) ? '修改' : '新增'?>商品</h2>
+          <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?=isset($product) ? base_url('/backend/product/update/' . $product->id) : base_url('/backend/product/store')?>">
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">產品名稱</label>
               <div class="col-sm-4">
@@ -26,6 +26,12 @@
               <label for="" class="col-sm-2 control-label">製造廠商</label>
               <div class="col-sm-4">
                 <input type="text" name="brand" class="form-control" value="<?=isset($product) ? $product->brand : ''?>" placeholder="請輸入廠商">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2 control-label"><?=isset($product) ? '修改' : '上傳'?>圖片</label>
+              <div class="col-sm-4">
+                <input type="file" name="picture">
               </div>
             </div>
             <div class="form-group">
