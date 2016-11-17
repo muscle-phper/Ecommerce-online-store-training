@@ -37,19 +37,17 @@ class Product extends CI_Controller {
 		$data = $this->input->post(null, true);
 		$this->product_model->add($data);
 
-		//上傳目錄需手動新增
+		//upload file
 		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/products';
 		$config['allowed_types'] = 'jpg|png|PPT';
-		//修改檔案名稱
 		//uniqid();   Generate a unique ID
 		$config['file_name'] = uniqid();
-		//裝載文件上傳類別
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('picture');
-		var_dump($this->upload->data());
+		//var_dump($this->upload->data());
 
-		$data = $this->upload->data();
-		echo $data['file_name'];
+		/*$data = $this->upload->data();
+		echo $data['file_name'];*/
 		redirect('/backend/product');
 
 	}

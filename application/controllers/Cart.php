@@ -1,6 +1,6 @@
 <?php
 
-class Cart extends CI_Controller {
+class Cart extends MY_Controller {
 
 	public function add($productId) {
 
