@@ -33,6 +33,7 @@
                 <th>商品名稱</th>
                 <th>價格</th>
                 <th>數量</th>
+                <th>total</th>
               </tr>
             </thead>
             <tbody>

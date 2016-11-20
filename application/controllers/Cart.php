@@ -37,4 +37,9 @@ class Cart extends MY_Controller {
 
 	}
 
+	public function checkout($id) {
+
+		$this->load->view('/frontend/cart/checkout');
+	}
+
 }
