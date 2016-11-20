@@ -28,14 +28,7 @@ Class Account extends MY_controller {
 			'logged' => true,
 		]);
 
-		$this->load->view('/frontend/home/index', [
-			'member' => $member,
-		]);
-
-		$homeProducts = $this->product_model->getHomeProducts();
-		$this->load->view('/frontend/home/index', compact(
-			'homeProducts'
-		));
+		redirect('/');
 
 	}
 
