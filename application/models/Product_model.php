@@ -22,6 +22,14 @@ class Product_model extends CI_model {
 
 	}
 
+	public function getProducts($ids) {
+
+		return $this->db->from('products')
+			->where_in('id', $ids)
+			->get()
+			->result();
+	}
+
 	public function delete($id) {
 
 		return $this->db->where('id', $id)
