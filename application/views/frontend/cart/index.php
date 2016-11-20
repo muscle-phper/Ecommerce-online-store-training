@@ -22,6 +22,7 @@
   <body>
     <?php $this->load->view('/frontend/common/top');?>
 
+    <?=form_open('/cart/checkout/', ['method' => 'post'])?>
     <div class="container marketing">
       <hr class="featurette-divider">
       <div class="row featurette">
@@ -42,6 +43,7 @@
                 <td><?=$cp->name?></td>
                 <td><?=$cp->price?></td>
                 <td>1</td>
+                <?=form_hidden('product_id[]', $cp->id);?>
                 <td><a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/cart/destroy/" . $cp->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a></td>
               </tr>
             <?php endforeach?>
@@ -53,11 +55,12 @@
       <div class="row featurette" style="margin-top: 30px">
         <div class="row">
           <?php if ($this->session->name): ?>
-            <a href="<?=base_url('/frontend/cart/checkout/' . $this->session->id)?>">
-            <button class="col-md-offset-2 btn btn-lg btn-primary col-md-8">結帳</button>
-        <?php endif?>
+            <button type="submit" class="col-md-offset-2 btn btn-lg btn-primary col-md-8">結帳</button>
+          <?php endif?>
+          </form>
         </div>
       </div>
+      <?=form_close()?>
 
       <hr class="featurette-divider">
 

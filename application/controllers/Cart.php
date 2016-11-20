@@ -10,9 +10,9 @@ class Cart extends MY_Controller {
 
 	public function index() {
 
+		$this->load->helper('form');
 		$this->load->model('product_model');
 		$products = $this->cart->getAll();
-		//var_dump($products);exit;
 		$productIds = $this->getProductIds($products);
 		if ($products != null) {
 			$cartProducts = $this->product_model->getCartProducts($productIds);
@@ -37,9 +37,9 @@ class Cart extends MY_Controller {
 
 	}
 
-	public function checkout($id) {
+	public function checkout() {
 
-		$this->load->view('/frontend/cart/checkout');
+		//var_dump($this->input->post('product_id', []));
 	}
 
 }
