@@ -52,7 +52,9 @@
 
       <div class="row featurette" style="margin-top: 30px">
         <div class="row">
-            <button class="col-md-offset-2 btn btn-lg btn-primary col-md-8">結帳</button>
+          <?php if ($this->session->name): ?>
+          <button class="col-md-offset-2 btn btn-lg btn-primary col-md-8">結帳</button>
+        <?php endif?>
         </div>
       </div>
 

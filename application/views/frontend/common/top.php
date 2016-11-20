@@ -31,10 +31,16 @@
                </ul> -->
               <ul class="nav navbar-nav navbar-right">
 
-               <?=isset($this->session->name) ? '<li><a href="/account/logout"><span class="glyphicon glyphicon-user"></span>會員登出</a></li>' : '<li><a href="/account/login"><span class="glyphicon glyphicon-user"></span>會員登入</a></li>'?>
+                <?php if ($this->session->name): ?>
+                  <li><a href="/account/logout"><span class="glyphicon glyphicon-user"></span>會員登出</a></li>
+                  <?php else: ?>
+                  <li><a href="/account/login"><span class="glyphicon glyphicon-user"></span> 會員登入</a></li>
+                <?php endif?>
 
 
-                <?=isset($this->session->name) ? '<li><a href="/"><span class="glyphicon glyphicon-user"></span>我的帳戶</a></li>' : ''?>
+                <?php if ($this->session->name): ?>
+                  <li><a href="/"><span class="glyphicon glyphicon-user"></span>我的帳戶</a></li>
+                <?php endif?>
                 <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車 <span class="badge"><?=count($this->cart->getAll())?></span></a></li>
               </ul>
             </div>
