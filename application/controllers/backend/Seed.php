@@ -134,4 +134,30 @@ class Seed extends CI_Controller {
 
 	}
 
+	public function carousel() {
+
+		$this->db->truncate('carousel');
+		$this->db->insert_batch('carousel', [
+
+			[
+				'title' => 'HTC新機專欄',
+				'description' => '趁著秋冬換隻酷炫的手機吧',
+				'picture' => '/public/upload/carousel/HTC.jpg',
+
+			],
+			[
+				'title' => 'Iphone新機專欄',
+				'description' => '哀鳳鳳下殺五折',
+				'picture' => '/public/upload/carousel/Iphone.jpg',
+			],
+			[
+				'title' => 'Samsung新機專欄',
+				'description' => '三爽手機，含狗狗專用',
+				'picture' => '/public/upload/carousel/Samsung.jpg',
+			],
+
+		]);
+
+	}
+
 }
