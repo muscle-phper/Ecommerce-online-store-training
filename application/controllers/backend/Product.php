@@ -35,19 +35,17 @@ class Product extends CI_Controller {
 	public function store() {
 
 		$data = $this->input->post(null, true);
-		$this->product_model->add($data);
 
-		//upload file
 		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/products';
-		$config['allowed_types'] = 'jpg|png|PPT';
-		//uniqid();   Generate a unique ID
-		$config['file_name'] = uniqid();
+		$config['allowed_types'] = 'jpg|png|gif';
+		$config['file_name'] = date('YmdHis') . '_' . uniqid();
+
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('picture');
-		//var_dump($this->upload->data());
 
-		/*$data = $this->upload->data();
-		echo $data['file_name'];*/
+		$fileData = $this->upload->data();
+		$data['picture'] = '/public/upload/products/' . $fileData['file_name'];
+		$this->product_model->add($data);
 		redirect('/backend/product');
 
 	}
