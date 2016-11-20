@@ -39,7 +39,11 @@ class Cart extends MY_Controller {
 
 	public function checkout() {
 
-		//var_dump($this->input->post('product_id', []));
+		$productIds = $this->input->post('product_id');
+		$this->load->model('product_model');
+		$products = $this->product_model->getproducts($productIds);
+		var_dump($products);exit;
+
 	}
 
 }
