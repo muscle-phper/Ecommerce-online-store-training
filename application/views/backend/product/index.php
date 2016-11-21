@@ -20,6 +20,7 @@
                   <th>產品名稱</th>
                   <th>製造商</th>
                   <th>價格</th>
+                  <th>圖片</th>
                 </tr>
               </thead>
               <tbody>
@@ -34,6 +35,7 @@
                     <td><?=$row->name?></td>
                     <td><?=$row->brand?></td>
                     <td><?=$row->price?></td>
+                    <td><img class="first-slide" width="120px" height="100px" src="<?=$row->picture?>"></td>
                   </tr>
                 <?php endforeach;?>
               </tbody>
