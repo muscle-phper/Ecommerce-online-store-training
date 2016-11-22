@@ -24,6 +24,7 @@ class Migration_Create_carousel_table extends CI_Migration {
 	}
 
 	public function down() {
+
 		$this->dbforge->drop_table('carousel');
 	}
 }

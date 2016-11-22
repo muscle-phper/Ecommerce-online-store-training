@@ -10,6 +10,11 @@
     </li>
     <li>
       <a href="<?=base_url('/backend/order/index')?>">
-      <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> 訂單管理</a></li>
+      <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> 訂單管理</a>
+    </li>
+    <li>
+      <a href="<?=base_url('/backend/carousel/index')?>">
+      <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 網站輪撥管理</a>
+    </li>
   </ul>
 </div>
