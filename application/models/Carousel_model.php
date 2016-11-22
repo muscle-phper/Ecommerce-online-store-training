@@ -9,4 +9,10 @@ class Carousel_model extends CI_model {
 			->get()
 			->result();
 	}
+
+	public function destroy($id) {
+
+		return $this->db->where('$id', $id)
+			->delete('carousel');
+	}
 }

@@ -14,7 +14,7 @@
     </li>
     <li>
       <a href="<?=base_url('/backend/carousel/index')?>">
-      <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 網站輪撥管理</a>
+      <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 網站輪播管理</a>
     </li>
   </ul>
 </div>

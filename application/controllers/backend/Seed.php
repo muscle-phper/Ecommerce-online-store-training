@@ -140,17 +140,20 @@ class Seed extends CI_Controller {
 		$this->db->insert_batch('carousel', [
 
 			[
+				'ID' => '1',
 				'title' => 'HTC新機專欄',
 				'description' => '趁著秋冬換隻酷炫的手機吧',
 				'picture' => '/public/upload/carousel/HTC.jpg',
 
 			],
 			[
+				'ID' => '2',
 				'title' => 'Iphone新機專欄',
 				'description' => '哀鳳鳳下殺五折',
 				'picture' => '/public/upload/carousel/Iphone.jpg',
 			],
 			[
+				'ID' => '3',
 				'title' => 'Samsung新機專欄',
 				'description' => '三爽手機，含狗狗專用',
 				'picture' => '/public/upload/carousel/Samsung.jpg',
