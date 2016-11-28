@@ -67,9 +67,11 @@ class Product extends CI_Controller {
 		$this->upload->do_upload('picture');
 
 		$fileData = $this->upload->data();
-		$data['picture'] = '/public/upload/products/' . $fileData['file_name'];
-
+		if ($fileData['is_image'] === true) {
+			$data['picture'] = '/public/upload/products/' . $fileData['file_name'];
+		}
 		$this->product_model->update($id, $data);
+
 		redirect('/backend/product');
 
 	}
