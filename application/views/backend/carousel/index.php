@@ -15,6 +15,7 @@
               <thead>
                 <tr>
                   <th></th>
+                  <th>ID</th>
                   <th>標題</th>
                   <th>簡介</th>
                   <th>網址</th>
@@ -27,7 +28,7 @@
                     <td>
                     <a href="<?=base_url('/backend/carousel/edit/' . $row->id)?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 編輯</a>
                     <a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/backend/carousel/destroy/" . $row->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a>
-                    </td>
+                    <td><?=$row->id?></td>
                     <td><?=$row->title?></td>
                     <td><?=$row->description?></td>
                     <td><?=$row->url?></td>

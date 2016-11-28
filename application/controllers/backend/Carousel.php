@@ -18,14 +18,36 @@ class Carousel extends My_controller {
 
 	}
 
+	public function create() {
+
+		$this->load->view('/backend/carousel/form');
+	}
+
 	public function destroy($id) {
 
 		$this->carousel_model->delete($id);
-		redirect('/');
+		redirect('/backend/carousel');
 	}
 
 	public function edit($id) {
 
-		$this->carousel_model->get
+		$carousel = $this->carousel_model->getCarousel($id);
+		$this->load->view('/backend/carousel/form', [
+			'carousel' => $carousel,
+		]);
+	}
+
+	public function update($id) {
+
+		$data = $this->input->post(null, true);
+		$this->carousel_model->update($id, $data);
+		redirect('/backend/carousel');
+	}
+
+	public function store() {
+
+		$data = $this->input->post(null, true);
+		$this->carousel_model->add($data);
+		redirect('/backend/carousel');
 	}
 }
