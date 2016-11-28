@@ -35,7 +35,6 @@ class Product extends CI_Controller {
 	public function store() {
 
 		$data = $this->input->post(null, true);
-
 		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/products';
 		$config['allowed_types'] = 'jpg|png|gif';
 		$config['file_name'] = date('YmdHis') . '_' . uniqid();

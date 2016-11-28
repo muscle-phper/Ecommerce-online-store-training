@@ -40,13 +40,37 @@ class Carousel extends My_controller {
 	public function update($id) {
 
 		$data = $this->input->post(null, true);
+
+		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/carousel';
+		$config['allowed_types'] = 'jpg|png|gif';
+		$config['file_name'] = date('YmdHis') . '_' . uniqid();
+
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('picture');
+
+		$fileData = $this->upload->data();
+		if ($fileData['is_image'] === true) {
+			$data['picture'] = '/public/upload/carousel/' . $fileData['file_name'];
+		}
 		$this->carousel_model->update($id, $data);
+
 		redirect('/backend/carousel');
 	}
 
 	public function store() {
 
 		$data = $this->input->post(null, true);
+
+		$config['upload_path'] = 'D:/wamp64/www/e-store/public/upload/carousel';
+		$config['allowed_types'] = 'jpg|png|gif';
+		$config['file_name'] = date('YmdHis') . '_' . uniqid();
+
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('picture');
+
+		$fileData = $this->upload->data();
+
+		$data['picture'] = '/public/upload/carousel/' . $fileData['file_name'];
 		$this->carousel_model->add($data);
 		redirect('/backend/carousel');
 	}

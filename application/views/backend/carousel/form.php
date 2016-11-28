@@ -9,30 +9,29 @@
         <?php $this->load->view('/backend/common/menu')?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header"><?=isset($carousel) ? '修改' : '新增'?>輪播</h2>
-          <form class="form-horizontal" method="post" action="<?=isset($carousel) ? base_url('/backend/carousel/update/' . $carousel->id) : base_url('/backend/carousel/store')?>">
+          <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?=isset($carousel) ? base_url('/backend/carousel/update/' . $carousel->id) : base_url('/backend/carousel/store')?>">
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">標題</label>
               <div class="col-sm-4">
-                <input type="text" name="title" class="form-control" value="<?=isset($carousel) ? $carousel->title : ''?>" placeholder="請輸入帳號">
+                <input type="text" name="title" class="form-control" value="<?=isset($carousel) ? $carousel->title : ''?>" placeholder="請輸入標題">
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">簡介</label>
               <div class="col-sm-4">
-                <input type="text" name="description" class="form-control" value="<?=isset($carousel) ? $carousel->description : ''?>" placeholder="請輸入密碼">
+                <input type="text" name="description" class="form-control" value="<?=isset($carousel) ? $carousel->description : ''?>" placeholder="請輸入簡介">
               </div>
             </div>
             <div class="form-group">
               <label for="" class="col-sm-2 control-label">網址</label>
               <div class="col-sm-4">
-                <input type="text" name="url" class="form-control" value="<?=isset($carousel) ? $carousel->url : ''?>" placeholder="請輸入姓名">
+                <input type="text" name="url" class="form-control" value="<?=isset($carousel) ? $carousel->url : ''?>" placeholder="請輸入網址">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">圖片
-              </label>
+              <label for="" class="col-sm-2 control-label"><?=isset($carousel) ? '修改' : '上傳'?>圖片</label>
               <div class="col-sm-4">
-                <input type="text" name="picture" class="form-control" value="<?=isset($carousel) ? $carousel->picture : ''?>" placeholder="請輸入地址">
+                <input type="file" name="picture">
               </div>
             </div>
             <div class="form-group">
