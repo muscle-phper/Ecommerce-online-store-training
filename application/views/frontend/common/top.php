@@ -42,6 +42,7 @@
                   <li><a href="/"><span class="glyphicon glyphicon-user"></span>我的帳戶</a></li>
                 <?php endif?>
                 <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車 <span class="badge"><?=$cartProductAmount?></span></a></li>
+
               </ul>
             </div>
           </div>

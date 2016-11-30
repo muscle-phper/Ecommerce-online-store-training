@@ -37,16 +37,22 @@
               </tr>
             </thead>
             <tbody>
+              <?php $total_price = 0;?>
               <?php foreach ($cartProducts as $index => $cp): ?>
               <tr>
                 <th scope="row"><?=$index + 1?></th>
                 <td><?=$cp->name?></td>
                 <td><?=$cp->price?></td>
                 <td>1</td>
+                <?php $total_price = $total_price + $cp->price;?>
                 <?=form_hidden('product_id[]', $cp->id);?>
                 <td><a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/cart/destroy/" . $cp->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a></td>
               </tr>
-            <?php endforeach?>
+              <?php endforeach?>
+              <tr>
+                <td></td><td>total</td><td><?=$total_price?></td>
+                <?=form_hidden('total_price[]', $total_price);?>
+              </tr>
             </tbody>
           </table>
         </div>

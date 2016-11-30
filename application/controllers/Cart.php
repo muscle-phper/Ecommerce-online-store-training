@@ -42,7 +42,10 @@ class Cart extends MY_Controller {
 		$productIds = $this->input->post('product_id');
 		$this->load->model('product_model');
 		$products = $this->product_model->getproducts($productIds);
-		var_dump($products);exit;
+		$this->load->view('/frontend/cart/checkout', [
+			'productIds' => $productIds,
+			'products' => $products,
+		]);
 
 	}
 
