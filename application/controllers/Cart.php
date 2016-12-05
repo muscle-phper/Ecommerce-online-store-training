@@ -39,13 +39,18 @@ class Cart extends MY_Controller {
 
 	public function checkout() {
 
+		$total_price = $this->input->post('total_price');
 		$productIds = $this->input->post('product_id');
 		$this->load->model('product_model');
 		$products = $this->product_model->getproducts($productIds);
-		$this->load->view('/frontend/cart/checkout', [
-			'productIds' => $productIds,
-			'products' => $products,
-		]);
+
+		$data = [
+			'total_price' => $total_price,
+			'created_at' => date('Y-m-d H:i:s'),
+		];
+		$this->load->model('order_model');
+		$this->order_model->add($data);
+		redirect();
 
 	}
 
