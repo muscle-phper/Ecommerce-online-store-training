@@ -51,7 +51,6 @@
               <?php endforeach?>
               <tr>
                 <td></td><td>total</td><td><?=$total_price?></td>
-                <?=form_hidden('total_price[]', $total_price);?>
               </tr>
             </tbody>
           </table>

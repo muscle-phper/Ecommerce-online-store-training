@@ -7,13 +7,14 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <?php foreach ($carousel as $i => $cl): ?>
+
         <div class="item<?=($i == 0) ? ' active' : ''?>">
           <img class="first-slide" src="<?=$cl->picture?>" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1><?=$cl->title?>.</h1>
               <p><?=$cl->description?>.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <p><a class="btn btn-lg btn-primary" href="<?=$cl->url?>" role="button">按此連結</a></p>
             </div>
           </div>
         </div>

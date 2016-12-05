@@ -29,7 +29,7 @@
                     <td>
                     <a href="<?=base_url('/backend/product/edit/' . $row->id)?>" class="btn btn-primary btn-xs" type="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">編輯
                     </a>
-                    <a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/backend/product/destroy/" . $row->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a>
+                    <a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/backend/order/destroy/" . $row->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 刪除</a>
                     </td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name?></td>
