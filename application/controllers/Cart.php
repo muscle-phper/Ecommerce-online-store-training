@@ -47,6 +47,7 @@ class Cart extends MY_Controller {
 		$data = [
 			'total_price' => $total_price,
 			'created_at' => date('Y-m-d H:i:s'),
+			'member_id' => $this->session->id,
 		];
 		$this->load->model('order_model');
 		$this->order_model->add($data);
