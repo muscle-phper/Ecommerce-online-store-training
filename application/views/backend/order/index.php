@@ -13,26 +13,25 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th><a href="<?=base_url('/backend/order/insert/')?>">新增</a></th>
-                  <th>訂單編號</th>
-                  <th>客戶編號</th>
-                  <th>產品名稱</th>
-                  <th>數量</th>
-                  <th>單價</th>
-                  <th>出貨時間</th>
+                  <th><a href="<?=base_url('/backend/order/create/')?>" class="btn btn-primary">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true">新增訂單</a></th>
+                  <th>ID</th>
+                  <th>訂單總額</th>
+                  <th>會員編號</th>
+                  <th>建立日期</th>
                 </tr>
               </thead>
               <tbody>
                 <?php foreach ($order_list as $row): ?>
                   <tr>
                     <td>
-                    <a href="<?=base_url('/backend/order/edit/' . $row->id)?>">編輯</a>
-                    |<a href="<?=base_url('/backend/order/destroy/' . $row->id)?>">刪除</a>
+                    <a href="<?=base_url('/backend/order/edit/' . $row->id)?>"class="btn btn-primary btn-xs" type="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">編輯</a>
+                    |<a href="javascript:void(0)" onclick="destroyRow('<?=base_url("/backend/order/destroy/" . $row->id)?>')" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash" aria-hidden="true">刪除</a>
                     </td>
                     <td><?=$row->id?></td>
-                    <td><?=$row->name?></td>
-                    <td><?=$row->price?></td>
-                    <td><?=$row->amount?></td>
+                    <td><?=$row->total_price?></td>
+                    <td><?=$row->member_id?></td>
+                    <td><?=$row->created_at?></td>
                   </tr>
                 <?php endforeach;?>
               </tbody>
@@ -51,6 +50,14 @@
     <script src="<?=base_url('/public/js/holder.min.js')?>"> </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?=base_url('/public/js/ie10-viewport-bug-workaround.js')?>"> </script>
+
+    <script>
+    function destroyRow(link){
+      if(confirm('確定是否刪除')){
+        location.replace(link);
+      }
+    }
+    </script>
 
 
 </body></html>0

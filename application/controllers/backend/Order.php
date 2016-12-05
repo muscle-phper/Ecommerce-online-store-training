@@ -16,12 +16,38 @@ class Order extends CI_Controller {
 
 	}
 
+	public function create() {
+
+		$this->load->view('/backend/order/form');
+	}
+
 	public function edit($id) {
 
 		$order = $this->order_model->getOrder($id);
 		$this->load->view('/backend/order/form', [
 			'order' => $order,
 		]);
+	}
+
+	public function store() {
+
+		$data = $this->input->post(null, true);
+		$this->order_model->add($data);
+		redirect('/backend/order');
+	}
+
+	public function update($id) {
+
+		$data = $this->input->post(null, true);
+		$this->order_model->update($data, $id);
+		redirect('/backend/order');
+
+	}
+
+	public function destroy($id) {
+
+		$this->order_model->delete($id);
+		redirect('/backend/order');
 	}
 
 }

@@ -20,6 +20,23 @@ class Order_model extends CI_model {
 
 	}
 
+	public function add($data) {
+
+		return $this->db->insert('orders', $data);
+	}
+
+	public function update($data, $id) {
+
+		return $this->db->where('id', $id)
+			->update('orders', $data);
+	}
+
+	public function delete($id) {
+
+		return $this->db->where('id', $id)
+			->delete('orders');
+	}
+
 }
 
 ?>

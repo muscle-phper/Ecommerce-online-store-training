@@ -11,21 +11,15 @@
           <h2 class="sub-header"><?=isset($order) ? '修改' : '新增'?>訂單</h2>
           <form class="form-horizontal" method="post" action="<?=isset($order) ? base_url('/backend/order/update/' . $order->id) : base_url('/backend/order/store')?>">
             <div class="form-group">
-              <label for="" class="col-sm-2 control-label">產品名</label>
+              <label for="" class="col-sm-2 control-label">訂單總額</label>
               <div class="col-sm-4">
-                <input type="text" name="name" class="form-control" value="<?=isset($order) ? $order->name : ''?>" placeholder="請輸入品名">
+                <input type="text" name="total_price" class="form-control" value="<?=isset($order) ? $order->total_price : ''?>" placeholder="請輸入總額">
               </div>
             </div>
             <div class="form-group">
-              <label for="" class="col-sm-2 control-label">價格</label>
+              <label for="" class="col-sm-2 control-label">會員編號</label>
               <div class="col-sm-4">
-                <input type="text" name="name" class="form-control" value="<?=isset($order) ? $order->price : ''?>" placeholder="請輸入價格">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="" class="col-sm-2 control-label">廠牌</label>
-              <div class="col-sm-4">
-                <input type="text" name="name" class="form-control" value="<?=isset($order) ? $order->make : ''?>" placeholder="請輸入廠牌">
+                <input type="text" name="member_id" class="form-control" value="<?=isset($order) ? $order->member_id : ''?>" placeholder="請輸入員編">
               </div>
             </div>
             <div class="form-group">
