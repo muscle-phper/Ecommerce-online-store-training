@@ -38,4 +38,13 @@ Class Account extends MY_controller {
 		redirect('/');
 
 	}
+
+	public function myaccount() {
+
+		$member = $this->member_model->getMyAccount($this->session->id);
+
+		$this->load->view('/frontend/account/myaccount', [
+			'member' => $member,
+		]);
+	}
 }

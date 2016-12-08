@@ -48,7 +48,7 @@
 
       <!-- FOOTER -->
 
-      <?php $this->load->view('frontend/common/footer');?>
+      <?php $this->load->view('/frontend/common/footer');?>
 
     </div><!-- /.container -->
 

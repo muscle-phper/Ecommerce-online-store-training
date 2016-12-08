@@ -54,6 +54,13 @@ class Member_model extends CI_model {
 		return $this->db->insert('members', $data);
 	}
 
+	public function getMyAccount($id) {
+		return $this->db->from('members')
+			->where('id', $id)
+			->get()
+			->result();
+	}
+
 }
 
 ?>
