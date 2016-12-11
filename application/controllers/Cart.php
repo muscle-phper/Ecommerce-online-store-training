@@ -14,6 +14,7 @@ class Cart extends MY_Controller {
 		$this->load->model('product_model');
 		$products = $this->cart->getAll();
 		$productIds = $this->getProductIds($products);
+
 		if ($products != null) {
 			$cartProducts = $this->product_model->getCartProducts($productIds);
 		} else { $cartProducts = [];}

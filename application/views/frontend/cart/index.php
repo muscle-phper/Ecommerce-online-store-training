@@ -29,6 +29,7 @@
         <div class="col-md-offset-2 col-md-8">
           <table class="table table-hover">
             <thead>
+            <?php if ($this->session->name): ?>
               <tr>
                 <th>#</th>
                 <th>商品名稱</th>
@@ -53,6 +54,7 @@
                 <td></td><td>total</td><td><?=$total_price?></td>
                 <?=form_hidden('total_price', $total_price);?>
               </tr>
+            <?php endif?>
             </tbody>
           </table>
         </div>

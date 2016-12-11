@@ -23,6 +23,7 @@ class MY_Cart {
 	public function add($itemId) {
 		$products = $this->getAll();
 		if ($this->isDuplicate($itemId)) {
+
 			return;
 		}
 		array_push($products, (object) ['id' => $itemId]);
@@ -52,5 +53,6 @@ class MY_Cart {
 		$cookies = get_cookie('products');
 		$cookies = $cookies ? $cookies : '[]';
 		return json_decode($cookies);
+
 	}
 }
